@@ -6,11 +6,12 @@ import {
   actualizarEstudiante,
   eliminarEstudiante
 } from '../controllers/estudianteController.js';
+import { authenticateToken } from '../middleware/jwtverificacion.js';
 
 const routes = express.Router();
 
-routes.get('/', consultarEstudiantes);
-routes.post('/', agregarEstudiante);
+routes.get('/', authenticateToken, consultarEstudiantes);
+routes.post('/', authenticateToken, agregarEstudiante);
 
 routes
   .route('/:id')

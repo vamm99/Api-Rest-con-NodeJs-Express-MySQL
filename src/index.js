@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors';
 import { envs } from './config/env.js';
 import estudiantesRoutes from './routers/estudianteRoutes.js';
+import adminRoutes from './routers/adminRoutes.js';
 
 const app = express();
 const port = envs.PORT;
@@ -17,6 +18,7 @@ app.use(morgan('dev'));
 /**
  * Routers
  */
+app.use('/administrador', adminRoutes);
 app.use('/estudiantes', estudiantesRoutes);
 
 /**

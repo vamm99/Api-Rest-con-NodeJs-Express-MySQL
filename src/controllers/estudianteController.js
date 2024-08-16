@@ -13,7 +13,7 @@ import {
 export const consultarEstudiantes = async (req, res) => {
   try {
     const estudiantes = await obtenerEstudiantes();
-    res.status(200).json(estudiantes);
+    res.status(200).json({ Email: req.email, datos: estudiantes });
   } catch (error) {
     res.status(500).send(error.message);
   }

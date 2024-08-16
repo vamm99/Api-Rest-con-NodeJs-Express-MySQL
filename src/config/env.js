@@ -6,5 +6,6 @@ export const envs = {
   USER: env.get('USER').asString(),
   PASSWORD: env.get('PASSWORD').asString(),
   DATABASE: env.get('DATABASE').asString(),
-  PORT_DB: env.get('PORT_DB').asPortNumber()
+  PORT_DB: env.get('PORT_DB').asPortNumber(),
+  JWT_SECRET: env.get('JWT_SECRET').asString()
 };
